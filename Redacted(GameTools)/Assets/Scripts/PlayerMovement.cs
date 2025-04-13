@@ -14,10 +14,17 @@ public class PlayerMovement : MonoBehaviour
     private float dashingTime = 0.02f;
     private float dashingCooldown = 1f;
 
+    private bool isWallSliding;
+    private float wallSlidingSpeed = 2f;
+
+
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private TrailRenderer tr;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
 
 
 
@@ -46,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
 
+        WallSlide();
 
         flip();
     }
@@ -65,6 +73,24 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private bool IsWalled()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    }
+
+    private void WallSlide()
+    {
+        if (IsWalled() && !isGrounded() && horizontal != 0f)
+        {
+            isWallSliding = true;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
+        else
+        {
+            isWallSliding = false;
+        }
     }
 
 
