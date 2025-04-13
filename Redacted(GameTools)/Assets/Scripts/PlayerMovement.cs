@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpingDuration = 0.4f;
     private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
+    private bool isJumping;
+    public int maxJumps = 3;
+    private int remainingJumps;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -43,9 +47,23 @@ public class PlayerMovement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && isGrounded())
+        if (isGrounded() && !Input.GetButton("Jump"))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+            isJumping = false;
+            remainingJumps = maxJumps;
+        }
+
+
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (isGrounded() || (isJumping && remainingJumps > 0)) 
+            {
+                isJumping = true;
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+                remainingJumps--;
+            }
+    
         }
 
         if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)

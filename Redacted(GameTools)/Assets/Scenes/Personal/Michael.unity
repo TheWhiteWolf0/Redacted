@@ -927,6 +927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   jumpingPower: 16
+  maxJumps: 2
   rb: {fileID: 1046822485}
   groundCheck: {fileID: 472302068}
   groundLayer:
