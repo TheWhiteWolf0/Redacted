@@ -2479,6 +2479,7 @@ GameObject:
   - component: {fileID: 826557194}
   - component: {fileID: 826557193}
   - component: {fileID: 826557192}
+  - component: {fileID: 826557196}
   m_Layer: 0
   m_Name: Level End Portal
   m_TagString: Untagged
@@ -2547,7 +2548,7 @@ MonoBehaviour:
   enteredTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 826557196}
         m_TargetAssemblyTypeName: SceneTransitions, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -2556,7 +2557,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level1
+          m_StringArgument: Level3
           m_BoolArgument: 0
         m_CallState: 2
   exitedTrigger:
@@ -2632,6 +2633,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &826557196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826557191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e324b3ecb3d6e63409c4c8e528c86d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &845796829
 PrefabInstance:
   m_ObjectHideFlags: 0
