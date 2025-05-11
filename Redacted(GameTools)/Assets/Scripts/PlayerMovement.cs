@@ -78,11 +78,12 @@ public class PlayerMovement : MonoBehaviour
 
         WallSlide();
         WallJump();
+        flip();
 
-        if (!isWallJumping)
-        {
-            flip();
-        }
+        //if (!isWallJumping)
+        //{
+        //    flip();
+       // }
     }
 
     private void FixedUpdate()
