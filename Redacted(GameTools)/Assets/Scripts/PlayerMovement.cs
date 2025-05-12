@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 100f;
+    private float dashingPower = 1000f;
     private float dashingTime = 0.02f;
     private float dashingCooldown = 1f;
 
@@ -35,7 +35,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
 
+    Animator animator;
 
+    private void Start()
+    {
+       rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -62,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = true;
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
                 remainingJumps--;
+
+                //
             }
     
         }
@@ -88,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
 
         if (isDashing)
         {
