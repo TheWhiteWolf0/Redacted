@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
 
         if (isDashing)
         {
