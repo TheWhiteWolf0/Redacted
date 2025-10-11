@@ -5810,9 +5810,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1054562471907601770, guid: b4271c86c611a154388e9d820f369b3c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054562471907601770, guid: b4271c86c611a154388e9d820f369b3c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 449.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054562471907601770, guid: b4271c86c611a154388e9d820f369b3c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000068665
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054562471907601770, guid: b4271c86c611a154388e9d820f369b3c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00046539
+      objectReference: {fileID: 0}
     - target: {fileID: 1383489144924003294, guid: b4271c86c611a154388e9d820f369b3c, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789180065440499408, guid: b4271c86c611a154388e9d820f369b3c, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2422900604378789213, guid: b4271c86c611a154388e9d820f369b3c, type: 3}
       propertyPath: m_Pivot.x
